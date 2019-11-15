@@ -102,7 +102,7 @@ This repository is configured with [EditorConfig](http://editorconfig.org) rules
 [npm-url]: https://www.npmjs.org/package/frau-appconfig-builder
 [npm-image]: https://img.shields.io/npm/v/frau-appconfig-builder.svg
 [ci-url]: https://travis-ci.org/Brightspace/frau-appconfig-builder
-[ci-image]: https://img.shields.io/travis-ci/Brightspace/frau-appconfig-builder.svg
+[ci-image]: https://travis-ci.org/Brightspace/frau-appconfig-builder.svg
 [coverage-url]: https://coveralls.io/r/Brightspace/frau-appconfig-builder?branch=master
 [coverage-image]: https://img.shields.io/coveralls/Brightspace/frau-appconfig-builder.svg
 [dependencies-url]: https://david-dm.org/brightspace/frau-appconfig-builder
