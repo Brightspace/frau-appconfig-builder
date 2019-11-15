@@ -2,6 +2,7 @@ import chai from 'chai';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import builder from '../lib/htmlAppConfigBuilder';
+import stream from "stream";
 
 chai.should();
 chai.use(sinonChai);
@@ -86,6 +87,22 @@ describe('htmlAppConfigBuilder', () => {
 			});
 
 		});
+	});
+
+	describe('buildStream', () => {
+
+		it('should return a stream that contains correct data', () => {
+			const val = builder.buildStream(OPTS);
+			val.should.instanceOf(stream.Stream);
+			const contents = val.read().toString();
+			const data = JSON.parse(contents);
+			data.should.have.property('schema');
+			data.should.have.property('metadata');
+			data.should.have.property('loader');
+			data.loader.should.have.property('schema', 'http://apps.d2l.com/uiapps/htmlschema/v1.json' );
+			data.loader.should.have.property('defaultResource', 'test' );
+		});
+
 	});
 });
 

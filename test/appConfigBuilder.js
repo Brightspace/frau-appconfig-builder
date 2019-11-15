@@ -1,5 +1,5 @@
 import chai from 'chai';
-import sinon from 'sinon'; 
+import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import builder from '../lib/appConfigBuilder';
 
@@ -103,14 +103,14 @@ describe('appConfigBuilder', () => {
 			describe('valid arguments', () => {
 
 				const VALUES = {
-					id: [ 
-						'urn:d2l:fra:id:some-id', 
-						'urn:d2l:fra:id:some.id' 
+					id: [
+						'urn:d2l:fra:id:some-id',
+						'urn:d2l:fra:id:some.id'
 					],
 					version: [ '0.0.0', '1.0.0-alpha.1' ],
 					description: [
-						'A simple description.', 
-						longString(1024) 
+						'A simple description.',
+						longString(1024)
 					],
 				};
 
@@ -180,7 +180,7 @@ describe('appConfigBuilder', () => {
 					stub.restore();
 				});
 
-				['version','description'].forEach( (param) => {
+				['id','version','description'].forEach( (param) => {
 
 					it(param, () => {
 						const opts = createValidOptsWithout(param);
