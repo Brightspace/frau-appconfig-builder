@@ -2,7 +2,7 @@
 
 var chalk = require('chalk'),
 	argv = require('yargs'),
-	vfs = require('vinyl-fs');
+	fs = require('fs');
 
 argv = argv.usage('Usage: frau-appconfig-builder [--appfile|-f] [--dist|-d] [--loader|l] [--showloading|-s]')
 	.example('frau-appconfig-builder -d dist')
@@ -65,8 +65,8 @@ if (opts.loader === 'umd') {
 }
 
 appConfigBuilder.buildStream(target, opts)
-	.pipe(vfs.dest(opts.dist))
-	.on('end', function() {
+	.pipe(fs.createWriteStream(opts.dist + '/appconfig.json'))
+	.on('close', function() {
 		console.log(chalk.grey('   Loader: ' + appConfigBuilder.name));
 		console.log(chalk.grey('   End-point: ' + target + '\n'));
 	});
