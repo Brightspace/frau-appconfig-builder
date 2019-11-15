@@ -68,8 +68,6 @@ describe('umdAppConfigBuilder', () => {
 			const val = builder.buildStream(TARGET, OPTS);
 			val.should.instanceOf(stream.Stream);
 			const contents = val.read().toString();
-			console.log(contents);
-
 			const data = JSON.parse(contents);
 			data.should.have.property('schema');
 			data.should.have.property('metadata');
