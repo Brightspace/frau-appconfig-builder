@@ -53,13 +53,13 @@ describe('iframeAppConfigBuilder', () => {
 		it('should return a stream that contains correct data', () => {
 			const val = builder.buildStream(TARGET, OPTS);
 			val.should.instanceOf(stream.Stream);
-			const contents = val.read().toString();
-			const data = JSON.parse(contents);
-			data.should.have.property('schema');
-			data.should.have.property('metadata');
-			data.should.have.property('loader');
-			data.loader.should.have.property('schema', 'http://apps.d2l.com/uiapps/iframeschema/v1.json' );
-			data.loader.should.have.property('endpoint', TARGET );
+			const s = new stream.PassThrough({objectMode: true});
+			s._write = (file) => {
+				// we should be able to read a vinyl file object from this stream
+				file.basename.should.equal('appconfig.json');
+				file.isStream().should.be.true;
+			};
+			val.pipe(s);
 		});
 
 	});
