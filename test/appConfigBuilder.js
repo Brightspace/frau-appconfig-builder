@@ -1,7 +1,7 @@
-import chai from 'chai';
-import sinon from 'sinon';
-import sinonChai from 'sinon-chai';
-import builder from '../lib/appConfigBuilder';
+const chai = require('chai');
+const sinon = require('sinon');
+const sinonChai = require('sinon-chai');
+const builder = require('../lib/appConfigBuilder');
 
 chai.should();
 chai.use(sinonChai);
@@ -29,7 +29,7 @@ describe('appConfigBuilder', () => {
 					appId: 'urn:d2l:fra:id:some-id'
 				});
 
-			expect(builder.build(null, LOADER)).to.not.throw;
+			expect(function() { builder.build(null, LOADER); }).to.not.throw();
 
 			spy.restore();
 
@@ -59,11 +59,6 @@ describe('appConfigBuilder', () => {
 			});
 
 			describe('defaults', () => {
-
-				const VERSION = '1.0.0-alpha.1',
-					DESCRIPTION = 'It is a small world',
-					ID = 'urn:d2l:fra:id:some-id';
-
 				let stub;
 
 				before( () =>  {

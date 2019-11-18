@@ -1,8 +1,8 @@
-import chai from 'chai';
-import sinon from 'sinon';
-import sinonChai from 'sinon-chai';
-import builder from '../lib/htmlAppConfigBuilder';
-import stream from "stream";
+const chai = require('chai');
+const sinon = require('sinon');
+const sinonChai = require('sinon-chai');
+const builder = require('../lib/htmlAppConfigBuilder');
+const stream = require('stream');
 
 chai.should();
 chai.use(sinonChai);
@@ -74,8 +74,6 @@ describe('htmlAppConfigBuilder', () => {
 			});
 
 			describe('missing values', () => {
-				const VALUE = 'some-value';
-
 				it('defaultResource', () => {
 					const opts = createValidOptsWithout('defaultResource');
 

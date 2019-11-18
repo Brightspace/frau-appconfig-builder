@@ -1,8 +1,8 @@
-import chai from 'chai';
-import sinon from 'sinon';
-import sinonChai from 'sinon-chai';
-import builder from '../lib/umdAppConfigBuilder';
-import stream from "stream";
+const chai = require('chai');
+const sinon = require('sinon');
+const sinonChai = require('sinon-chai');
+const builder = require('../lib/umdAppConfigBuilder');
+const stream = require('stream');
 
 chai.should();
 chai.use(sinonChai);
