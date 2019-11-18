@@ -30,12 +30,12 @@
   },
   "homepage": "https://github.com/Brightspace/frau-appconfig-builder",
   "dependencies": {
-    "chalk": "^1.0.0",
+    "chalk": "^3.0.0",
     "frau-local-appresolver": "^1.0.0",
     "frau-publisher": "^2.7.10",
     "q": "^1.4.1",
-    "semver": "^5.0.3",
-    "yargs": "^3.10.0"
+    "semver": "^5.7.1",
+    "yargs": "^15.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",
