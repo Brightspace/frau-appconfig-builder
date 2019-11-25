@@ -1,7 +1,8 @@
-import chai from 'chai';
-import sinon from 'sinon'; 
-import sinonChai from 'sinon-chai';
-import builder from '../lib/umdAppConfigBuilder';
+const chai = require('chai');
+const sinon = require('sinon');
+const sinonChai = require('sinon-chai');
+const builder = require('../lib/umdAppConfigBuilder');
+const stream = require('stream');
 
 chai.should();
 chai.use(sinonChai);
@@ -61,6 +62,21 @@ describe('umdAppConfigBuilder', () => {
 		});
 	});
 
+	describe('buildStream', () => {
+
+		it('should return a stream that contains correct data', () => {
+			const val = builder.buildStream(TARGET, OPTS);
+			val.should.instanceOf(stream.Stream);
+			const s = new stream.PassThrough({objectMode: true});
+			s._write = (file) => {
+				// we should be able to read a vinyl file object from this stream
+				file.basename.should.equal('appconfig.json');
+				file.isStream().should.be.true;
+			};
+			val.pipe(s);
+		});
+
+	});
 });
 
 function createValidOpts() {
