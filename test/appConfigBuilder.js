@@ -100,7 +100,8 @@ describe('appConfigBuilder', () => {
 				const VALUES = {
 					id: [
 						'urn:d2l:fra:id:some-id',
-						'urn:d2l:fra:id:some.id'
+						'urn:d2l:fra:id:some.id',
+						'urn:d2l:fra:id:some-id-2',
 					],
 					version: [ '0.0.0', '1.0.0-alpha.1' ],
 					description: [
@@ -133,7 +134,7 @@ describe('appConfigBuilder', () => {
 			describe('invalid arguments', () => {
 
 				const VALUES = {
-					id: [ '....', '----', 'some--name', 'urn', 'urn:', 'urn:d2l:fra:id:some/id', 'urn:d2l:fra:id:some-id2' ],
+					id: [ '....', '----', 'some--name', 'urn', 'urn:', 'urn:d2l:fra:id:some/id', 'urn:d2l:fra:id:some-id$' ],
 					version: [ '....', '1.0-something', '1.0.0.1', '1.0', '1' ],
 					description: [ longString(1025) ],
 				};
