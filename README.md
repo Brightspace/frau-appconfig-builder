@@ -23,11 +23,12 @@ The FRAU appconfig builder can be run either directly on the console CLI (assumi
 Typical configuration for running in [TRAVIS](https://magnum.travis-ci.com/):
 
 ```javascript
-frau-appconfig-builder --dist|-d ./dist 
+frau-appconfig-builder --dist|-d ./dist
                        --appfile|-f app.js
                        --loader|-l umd
                        --envvar|-e TRAVIS
-                       --showloading|-s
+					   --showloading|-s
+					   --oslo|-o oslo/langterms/
                        + local appresolver options
                        + publisher options
 ```
@@ -90,7 +91,7 @@ builder.buildStream(target)
 - `envVar` (optional) - The environment variable for checking to determine the build environment (local vs. remote), necessary to resolve app end-point
 - `loader` (optional) - The app loader type to be specified in the `appconfig.json`, controls how the FRA will be loaded (ex. umd, iframe, html)
 - `showLoading` (optional umd) - Whether to show the loading indicator when using the umd loader. The defaults to false.
-
+- `oslo` (optional) - The oslo translation xml language terms path (ex. oslo/langterms/)
 ## Contributing
 
 Contributions are welcome, please submit a pull request!

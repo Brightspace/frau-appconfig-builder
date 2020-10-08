@@ -11,6 +11,7 @@ argv = argv.usage('Usage: frau-appconfig-builder [--appfile|-f] [--dist|-d] [--l
 	.alias('l', 'loader')
 	.alias('e', 'envvar')
 	.alias('s', 'showloading')
+	.alias('o', 'oslo')
 	.argv;
 
 var opts = {
@@ -20,6 +21,8 @@ var opts = {
 	loader: (argv.loader || process.env.npm_package_config_frauAppConfigBuilder_loader),
 	showLoading: ( (argv.showloading || process.env.npm_package_config_frauAppConfigBuilder_showLoading === 'true') ? true : false)
 };
+
+var oslo = (argv.oslo || process.env.npm_package_config_frauAppConfigBuilder_oslo);
 
 if (!opts.appFile) {
 	console.log(chalk.red('Target appFile not specified.'));
@@ -41,6 +44,10 @@ if (opts.envVar && process.env[opts.envVar]) {
 	target = publisher.app(publisherOpts)
 		.getLocation() + opts.appFile;
 
+	if (oslo) {
+		opts.oslo = publisher.app(publisherOpts)
+			.getLocation() + oslo;
+	}
 } else {
 
 	var localAppResolver = require('frau-local-appresolver');
