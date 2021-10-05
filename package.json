@@ -6,6 +6,10 @@
   "bin": {
     "frau-appconfig-builder": "bin/appconfigbuildercli"
   },
+  "files": [
+    "/bin",
+    "/lib"
+  ],
   "scripts": {
     "lint": "npm run lint:src && npm run lint:test",
     "lint:src": "jshint lib",
