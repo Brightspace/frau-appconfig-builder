@@ -6,13 +6,16 @@
   "bin": {
     "frau-appconfig-builder": "bin/appconfigbuildercli"
   },
+  "files": [
+    "/bin",
+    "/lib"
+  ],
   "scripts": {
     "lint": "npm run lint:src && npm run lint:test",
     "lint:src": "jshint lib",
     "lint:test": "jshint test",
-    "report-coverage": "coveralls < ./coverage/lcov.info",
-    "test:unit": "nyc --reporter text-summary --reporter lcov --reporter json node_modules/mocha/bin/_mocha test/ -- --recursive",
-    "test": "npm run lint -s && npm run test:unit -s"
+    "test:unit": "mocha",
+    "test": "npm run lint && npm run test:unit"
   },
   "repository": {
     "type": "git",
@@ -31,7 +34,7 @@
   "homepage": "https://github.com/Brightspace/frau-appconfig-builder",
   "dependencies": {
     "chalk": "^3.0.0",
-    "frau-local-appresolver": "^1.0.0",
+    "frau-local-appresolver": "^1.2.0",
     "frau-publisher": "^2.7.10",
     "q": "^1.4.1",
     "semver": "^5.7.1",
@@ -41,10 +44,8 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "coveralls": "^3.0.7",
     "jshint": "^2.5.11",
     "mocha": "^6.2.2",
-    "nyc": "^14.1.1",
     "sinon": "^7.5.0",
     "sinon-chai": "^3.3.0"
   }
