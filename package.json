@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/Brightspace/frau-appconfig-builder",
   "dependencies": {
-    "chalk": "^3.0.0",
+    "chalk": "^5.0.0",
     "frau-local-appresolver": "^1.2.0",
     "frau-publisher": "^2.7.10",
     "q": "^1.4.1",
