@@ -1,6 +1,6 @@
 const chai = require('chai');
 const sinon = require('sinon');
-const sinonChai = require('sinon-chai');
+const sinonChai = require('sinon-chai').default;
 const builder = require('../lib/htmlAppConfigBuilder');
 const stream = require('stream');
 
