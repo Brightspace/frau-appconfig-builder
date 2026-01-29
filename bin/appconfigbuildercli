@@ -1,10 +1,11 @@
 #! /usr/bin/env node
 
 var chalk = require('chalk'),
-	argv = require('yargs'),
+	yargs = require('yargs'),
 	vfs = require('vinyl-fs');
 
-argv = argv.usage('Usage: frau-appconfig-builder [--appfile|-f] [--dist|-d] [--loader|-l] [--showloading|-s]')
+var argv = yargs(process.argv)
+	.usage('Usage: frau-appconfig-builder [--appfile|-f] [--dist|-d] [--loader|-l] [--showloading|-s]')
 	.example('frau-appconfig-builder -d dist')
 	.alias('d', 'dist')
 	.alias('f', 'appfile')
