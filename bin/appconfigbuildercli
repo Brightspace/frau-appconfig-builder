@@ -4,7 +4,7 @@ var chalk = require('chalk'),
 	yargs = require('yargs'),
 	vfs = require('vinyl-fs');
 
-argv = yargs(process.argv)
+var argv = yargs(process.argv)
 	.usage('Usage: frau-appconfig-builder [--appfile|-f] [--dist|-d] [--loader|-l] [--showloading|-s]')
 	.example('frau-appconfig-builder -d dist')
 	.alias('d', 'dist')
