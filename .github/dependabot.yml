@@ -5,3 +5,7 @@ updates:
   schedule:
     interval: daily
   versioning-strategy: widen
+  ignore:
+      # is esm-only
+      - dependency-name: chalk
+        versions: '>= 5'
