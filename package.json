@@ -11,11 +11,8 @@
     "/lib"
   ],
   "scripts": {
-    "lint": "npm run lint:src && npm run lint:test",
-    "lint:src": "jshint lib",
-    "lint:test": "jshint test",
     "test:unit": "mocha",
-    "test": "npm run lint && npm run test:unit"
+    "test": "npm run test:unit"
   },
   "repository": {
     "type": "git",
@@ -34,17 +31,15 @@
   "homepage": "https://github.com/Brightspace/frau-appconfig-builder",
   "dependencies": {
     "chalk": "^4",
-    "frau-local-appresolver": "^1.2.0",
-    "frau-publisher": "^2.7.10",
-    "q": "^1.4.1",
+    "frau-local-appresolver": "^1",
+    "frau-publisher": "^2",
     "semver": "^7",
     "vinyl-fs": "^4",
-    "vinyl-source-stream": "^2.0.0",
+    "vinyl-source-stream": "^2",
     "yargs": "^18"
   },
   "devDependencies": {
     "chai": "^6",
-    "jshint": "^2",
     "mocha": "^11",
     "sinon": "^21",
     "sinon-chai": "^4"
