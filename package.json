@@ -29,6 +29,9 @@
     "url": "https://github.com/Brightspace/frau-appconfig-builder/issues"
   },
   "homepage": "https://github.com/Brightspace/frau-appconfig-builder",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "dependencies": {
     "chalk": "^4",
     "frau-local-appresolver": "^1",
